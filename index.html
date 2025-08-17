@@ -1,11 +1,207 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>Jinpia 홈페이지</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomeHome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #fafafa;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      width: 100%;
+      padding: 1.5rem 4%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+    header img {
+      height: 40px;
+    }
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff6b35;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #fff 0%, #f1f1f1 100%);
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero img {
+      height: 120px;
+      margin-bottom: 1.5rem;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: #555;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+    .btn {
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      background: #ff6b35;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 6px 20px rgba(255,107,53,0.3);
+    }
+    .btn:hover {
+      background: #e85a2a;
+      transform: translateY(-3px);
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 6rem 8%;
+      background: #fff;
+    }
+    .feature {
+      padding: 2rem;
+      border-radius: 20px;
+      background: #f9f9f9;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+    .feature:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .feature img {
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+    .feature h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #222;
+    }
+    .feature p {
+      color: #555;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, #ff6b35, #ff914d);
+      text-align: center;
+      padding: 5rem 2rem;
+      color: #fff;
+    }
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #ff6b35;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <h1>환영합니다 👋</h1>
-  <p>여기는 jinpia.ai.kr 공식 홈페이지입니다.</p>
+  <header>
+    <img src="Asset 3@2x.png" alt="HomeHome Logo">
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="Asset 4@2x.png" alt="HomeHome Logo">
+    <h1>당신의 새로운 집, HomeHome</h1>
+    <p>함께하는 공간, 따뜻한 연결. HomeHome은 당신을 더 나은 집으로 안내합니다.</p>
+    <a href="#features" class="btn">지금 시작하기</a>
+  </section>
+
+  <section id="features" class="features">
+    <div class="feature">
+      <img src="https://img.icons8.com/fluency/96/000000/home.png" alt="feature1">
+      <h3>스마트 매칭</h3>
+      <p>사용자 취향과 라이프스타일에 맞춘 집 매칭 시스템을 제공합니다.</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/fluency/96/000000/group.png" alt="feature2">
+      <h3>커뮤니티</h3>
+      <p>이웃과의 교류와 공유를 통해 진정한 ‘홈’을 경험하세요.</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/fluency/96/000000/like.png" alt="feature3">
+      <h3>안전 보장</h3>
+      <p>투명한 거래와 보안 시스템으로 안심할 수 있는 서비스를 제공합니다.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>당신의 새로운 여정을 시작하세요</h2>
+    <p>HomeHome과 함께라면 언제나 집이 기다리고 있습니다.</p>
+    <a href="#contact" class="btn">회원가입</a>
+  </section>
+
+  <footer>
+    <p>© 2025 HomeHome. All rights reserved.</p>
+    <p>
+      <a href="#">Instagram</a> | 
+      <a href="#">Twitter</a> | 
+      <a href="#">Facebook</a>
+    </p>
+  </footer>
 </body>
 </html>
