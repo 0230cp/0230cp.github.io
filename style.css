@@ -4,7 +4,7 @@
   --text: #0f172a;         /* slate-900 */
   --muted: #475569;        /* 더 진하게 (가독성 ↑) */
   --surface: #ffffff;
-  --border: rgba(2, 6, 23, .08);
+  --border: rgba(2, 6, 23, .1);   /* 헤더 라인 조금 더 진하게 */
   --shadow: 0 10px 30px rgba(2,6,23,.06);
   --shadow-lg: 0 24px 48px rgba(2,6,23,.08);
 
@@ -14,10 +14,10 @@
   --grad: linear-gradient(135deg,#0ea5e9 0%,#6366f1 55%,#8b5cf6 100%);
 
   /* Hero/PageHero 배경과 텍스트 명도 조정 */
-  --hero-bg-start: #eef2f6;   /* 완전 흰색 대신 은은한 라이트 그레이 */
-  --hero-bg-end:   #f7f9fc;
-  --hero-text:     #0f172a;   /* 헤드라인 더 진하게 */
-  --hero-muted:    #334155;   /* 리드 문구도 좀 더 진하게 */
+  --hero-bg-start: #f1f5f9;   /* 좀 더 은은한 라이트 그레이 */
+  --hero-bg-end:   #f8fafc;
+  --hero-text:     #111827;   /* 헤드라인 더 진하게 */
+  --hero-muted:    #475569;   /* 리드 문구 */
 }
 
 /* ========== Base ========== */
@@ -88,7 +88,7 @@ img{ max-width:100%; display:block; }
   .nav-links a{ width:100%; text-align:center; }
 }
 
-/* ========== Hero / Page Hero (배경·텍스트 가독성 강화) ========== */
+/* ========== Hero / Page Hero ========== */
 .hero{
   position:relative; padding: 120px 0 96px; overflow:hidden;
   background: linear-gradient(180deg,var(--hero-bg-start) 0%, var(--hero-bg-end) 65%);
@@ -103,9 +103,9 @@ img{ max-width:100%; display:block; }
   margin:0 0 .6rem;
   font-size: clamp(2rem, 4.5vw, 3.5rem);
   letter-spacing: -0.02em;
-  color: var(--hero-text);      /* 진하게 */
+  color: var(--hero-text);
 }
-.hero-lede, .page-hero .lede{ color: var(--hero-muted); } /* 리드 문구 더 진하게 */
+.hero-lede, .page-hero .lede{ color: var(--hero-muted); }
 .actions{ display:flex; gap:12px; justify-content:center; margin-top: 22px; }
 .hero-note{ margin-top: 16px; font-size:.95rem; color: var(--muted); }
 
@@ -175,12 +175,14 @@ img{ max-width:100%; display:block; }
 
 /* ========== Content / About ========== */
 .content-grid{
-  display:grid; grid-template-columns: 1.2fr .8fr; gap: 28px; padding: 48px 0;
+  display:grid; grid-template-columns: 1fr 1fr; gap: 28px; padding: 48px 0;
+  align-items: center; /* 가운데 정렬 */
 }
 @media (max-width: 960px){ .content-grid{ grid-template-columns: 1fr; } }
 .info-panel{
   background: var(--surface); border:1px solid var(--border);
   border-radius: 16px; padding: 20px; box-shadow: var(--shadow);
+  color: var(--text);
 }
 .checks{ list-style: none; padding:0; margin: 8px 0 20px; }
 .checks li{ padding-left: 26px; position: relative; margin: 8px 0; }
@@ -204,8 +206,9 @@ img{ max-width:100%; display:block; }
 }
 @media (max-width: 960px){ .contact-grid{ grid-template-columns: 1fr; } }
 .contact-card{
-  background: var(--surface); border:1px solid var(--border);
+  background: #f9fafb; border:1px solid var(--border);
   border-radius:16px; padding:24px; box-shadow: var(--shadow);
+  color: var(--text);
 }
 .link{ color: var(--primary-600); text-decoration:none; border-bottom:1px dashed rgba(99,102,241,.35); }
 .link:hover{ border-bottom-color: transparent; }
@@ -221,7 +224,7 @@ img{ max-width:100%; display:block; }
   box-shadow: 0 0 0 4px rgba(99,102,241,.15);
   background:#fff;
 }
-.form-note{ color: var(--muted); font-size:.95rem; }
+.form-note{ color: #64748b; font-size:.95rem; }
 
 /* ========== Footer ========== */
 .site-footer{ background:#f8fafc; border-top:1px solid var(--border); }
@@ -230,7 +233,7 @@ img{ max-width:100%; display:block; }
 .footer-links a{ color: var(--muted); text-decoration:none; }
 .footer-links a:hover{ color: var(--primary-600); }
 
-/* ========== Dark Scheme (밝은 섹션도 너무 하얗지 않게) ========== */
+/* ========== Dark Scheme ========== */
 @media (prefers-color-scheme: dark){
   :root{
     --bg:#0b1220;
@@ -241,7 +244,6 @@ img{ max-width:100%; display:block; }
     --shadow: 0 10px 30px rgba(0,0,0,.25);
     --shadow-lg: 0 24px 48px rgba(0,0,0,.35);
 
-    /* 어두운 테마의 라이트밴드도 살짝 어둡게 */
     --hero-bg-start:#121a2b;
     --hero-bg-end:#0e1627;
     --hero-text:#e8edf8;
