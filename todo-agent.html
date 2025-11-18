@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ai매니저 - 나만의 일정 매니저</title>
+    <style>
+      /* --- 엄격한 기준의 CSS: 가독성과 신뢰도 중심 --- */
+
+      /* 1. 기본 설정 */
+      :root {
+        --color-primary: #007aff; /* 신뢰를 주는 테크 블루 */
+        --color-kakao: #fee500; /* 카카오톡 CTA */
+        --color-kakao-text: #191919;
+        --color-text-dark: #222222;
+        --color-text-light: #555555;
+        --color-bg-light: #f9f9f9;
+        --color-border: #eeeeee;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Pretendard", "Noto Sans KR", sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.7;
+        color: var(--color-text-dark);
+        background-color: #ffffff;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* 2. 레이아웃 */
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* 3. 헤더 (신뢰도) */
+      .header {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: var(--color-text-dark);
+      }
+
+      /* 4. 히어로 섹션 (핵심 가치) */
+      .hero {
+        padding: 100px 0;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1.3;
+        margin-bottom: 20px;
+        /* 핵심 단어 강조 */
+        background: linear-gradient(to right, var(--color-primary), #00a3ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero .subtitle {
+        font-size: 1.25rem;
+        color: var(--color-text-light);
+        max-width: 650px;
+        margin: 0 auto 30px auto;
+      }
+
+      /* 5. CTA 버튼 (명확한 행동 유도) */
+      .cta-button {
+        display: inline-block;
+        padding: 14px 28px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 12px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .cta-button.kakao {
+        background-color: var(--color-kakao);
+        color: var(--color-kakao-text);
+      }
+
+      .cta-button.kakao:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      /* 6. 기능 섹션 (차별점 증명) */
+      .features {
+        padding: 80px 0;
+        background-color: var(--color-bg-light);
+        border-top: 1px solid var(--color-border);
+      }
+
+      .features h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 60px;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .feature-item {
+        background-color: #ffffff;
+        border: 1px solid var(--color-border);
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      }
+
+      .feature-item .icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+
+      .feature-item h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+      }
+
+      .feature-item p {
+        font-size: 1rem;
+        color: var(--color-text-light);
+        margin: 0;
+      }
+
+      /* 7. 푸터 (필수 정보) */
+      .footer {
+        padding: 50px 0;
+        text-align: center;
+        background-color: #f4f4f4;
+        color: #888888;
+        font-size: 0.9rem;
+        border-top: 1px solid var(--color-border);
+      }
+
+      .footer p {
+        margin: 5px 0;
+        line-height: 1.6;
+      }
+
+      .footer .divider {
+        margin: 0 8px;
+      }
+
+      /* 8. 모바일 반응형 */
+      @media (max-width: 768px) {
+        .hero {
+          padding: 60px 0;
+        }
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+        .hero .subtitle {
+          font-size: 1.1rem;
+        }
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+        .features h2 {
+          font-size: 2rem;
+        }
+        .footer p {
+          display: block;
+        }
+        .footer .divider {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="#" class="logo">나만의 ai 일정 매니저</a>
+        <a
+          href="https://pf.kakao.com/_ADD_YOUR_CHANNEL_ID_HERE"
+          class="cta-button kakao"
+          target="_blank"
+          >채널 추가</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1>단순 알림을 넘어선<br />진짜 AI 일정 관리</h1>
+          <p class="subtitle">
+            등록만 하고 잊으세요. AI 매니저가 채팅으로 등록된 일정의 '출발 시간'
+            알림부터 '완료 확인'까지, 당신의 실행을 끝까지 관리합니다.
+          </p>
+          <a
+            href="https://pf.kakao.com/_ADD_YOUR_CHANNEL_ID_HERE"
+            class="cta-button kakao"
+            target="_blank"
+          >
+            <svg
+              width="20"
+              height="18"
+              viewBox="0 0 20 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style="vertical-align: middle; margin-right: 8px"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M10 0C4.477 0 0 3.823 0 8.533C0 11.862 2.344 14.73 5.681 16.149C5.41 15.223 5.228 13.923 5.378 13.11C5.556 12.115 6.22 8.78 6.22 8.78C6.22 8.78 5.967 8.283 5.967 7.55C5.967 6.555 6.559 5.808 7.37 5.808C8.07 5.808 8.441 6.24 8.441 6.84C8.441 7.48 8.01 8.84 7.74 10.035C7.51 11.05 8.28 11.758 9.24 11.758C11.1 11.758 12.551 9.61 12.551 7.34C12.551 5.27 10.87 3.636 8.528 3.636C5.814 3.636 4.17 5.568 4.17 7.89C4.17 8.47 4.39 9.03 4.67 9.42C4.701 9.46 4.71 9.5 4.701 9.55L4.5 10.42C4.48 10.49 4.43 10.51 4.36 10.48C3.17 10.02 2.45 8.95 2.45 7.84C2.45 5.09 4.8 2.327 8.76 2.327C12.45 2.327 15.011 4.87 15.011 7.72C15.011 10.55 13.06 13.06 10.27 13.06C9.401 13.06 8.64 12.63 8.35 12.06C8.35 12.06 7.98 13.43 7.88 13.82C7.62 14.81 6.94 16.03 6.64 16.6C7.72 16.98 8.84 17.18 10 17.18C15.523 17.18 20 13.337 20 8.627C20 3.86 15.523 0 10 0Z"
+                fill="#191919"
+              />
+            </svg>
+            ai매니저 채널 추가하기
+          </a>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="container">
+          <h2>AI 매니저가 '관리'하는 방식</h2>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="icon">💬</div>
+              <h3>채팅으로 간편 등록</h3>
+              <p>
+                "내일 3시 강남역 미팅"처럼 편하게 말하세요. AI가 문맥을 파악해
+                즉시 일정을 등록합니다.
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="icon">⏰</div>
+              <h3>지능형 '실행' 알림</h3>
+              <p>
+                단순한 정시 알림이 아닙니다. 이동 시간을 계산해 '지금 출발해야
+                한다'는 실행 중심의 알림을 보냅니다.
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="icon">✅</div>
+              <h3>'완료' 확인 및 리포트</h3>
+              <p>
+                일정은 실행이 중요합니다. AI가 일정이 잘 끝났는지 확인하고,
+                당신의 실행력을 데이터로 관리해 줍니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          <b>회사명:</b> jinpia(진피아) <span class="divider">|</span>
+          <b>대표자명:</b> 고재찬
+        </p>
+        <p><b>주소:</b> 서울특별시 중구 퇴계로 36길 2, 신관동 B1층 B111호</p>
+        <p style="margin-top: 20px">&copy; 2025 jinpia. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+```
